@@ -1,0 +1,13 @@
+{
+    "name": "Ron Rademaker",
+    "require": {
+        "symfony/console": "^2.7",
+        "guzzlehttp/guzzle": "5.3",
+        "monolog/monolog": "^1.14",
+        "tijsverkoyen/css-to-inline-styles": "^1.5",
+        "sabberworm/php-css-parser": "^6.0"
+    },
+    "autoload": {
+       "classmap": [ "src/" ]
+    }
+}
