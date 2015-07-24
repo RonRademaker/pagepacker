@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+$autoloaders = [__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php']; // loaned these possible autoload locations from PHPUnit
+
+$autoLoaderInitialized = false;
+
+foreach ($autoloaders as $autoloader) {
+    if (file_exists($autoloader) && (!$autoLoaderInitialized)) {
+        require $autoloader;
+        $autoLoaderInitialized = true;
+    }
+}
+
+if (!$autoLoaderInitialized) {
+    fwrite(STDERR, 'Your installation is not supported, please use composer to install pagepacker');    
+    die(1);
+}
+
+use RonRademaker\PagePacker\Command\ConvertCommand;
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+$application->add(new ConvertCommand() );
+$application->run();

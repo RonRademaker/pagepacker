@@ -1,5 +1,6 @@
 {
-    "name": "Ron Rademaker",
+    "name": "ronrademaker/pagepacker",
+    "description": "CLI Tool to pack a URL into a single HTML file",
     "require": {
         "symfony/console": "^2.7",
         "guzzlehttp/guzzle": "5.3",
@@ -7,7 +8,19 @@
         "tijsverkoyen/css-to-inline-styles": "^1.5",
         "sabberworm/php-css-parser": "^6.0"
     },
+    "bin": [
+        "bin/pagepacker"
+    ],
     "autoload": {
-       "classmap": [ "src/" ]
-    }
+        "classmap": [
+            "src/"
+        ]
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ron Rademaker",
+            "email": "ron@connectholland.nl"
+        }
+    ]
 }
